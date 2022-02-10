@@ -5,10 +5,10 @@ from scipy.optimize import minimize
 
 # find a min of a function:
 print("""
-Find minimum of the function:
+Find local minimum of the function:
     np.sin(x / 5) * np.exp(x / 10) + 5 * np.exp(-x / 2)
 Method: BFGS.
-User needs to specify initial approximation of a minimum, the x coordinate""")
+User needs to specify initial approximation of a minimum, its x coordinate""")
 
 
 def f(x):
