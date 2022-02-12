@@ -10,24 +10,17 @@ np.set_printoptions(precision=3, suppress=True)
 
 print("""
 # The algorithm calculates linear regression coefficients for three types of model:
-- linear regression (does not handle well collinearity in matrix)
+- linear regression (does not handle well collinearity in matrix, over-fits)
 - lasso regression (Lasso is better for penalizing coefficients for uninformative features)
-- ridge regression
+- ridge regression (penalizes as well)
+# Ridge and Lasso regression are used to reduce model's over-fitting.
 
-# Ridge and Lasso regression are some of the simple techniques to reduce model complexity
-# and prevent over-fitting which may result from simple linear regression.")
-# info from https://towardsdatascience.com/ridge-and-lasso-regression-a-complete-guide-with-python-scikit-learn-e20e34bcbf0b
+# Ridge Regression : the cost function is penalized by the coefficients' square of the magnitude
+# multiplied by the regularization coefficient λ.
+# For low λ the model is close to linear regression model.
 
-#"Ridge Regression : In ridge regression, the cost function is altered by adding a penalty equivalent
-# to square of the magnitude of the coefficients.
-# So ridge regression puts constraint on the coefficients (w). The penalty term (lambda) regularizes
-# the coefficients such that if the coefficients take large values the optimization function is penalized.
-# So, ridge regression shrinks the coefficients and it helps to reduce the model complexity and multi-collinearity.
-# When λ → 0 , the cost function becomes similar to the linear regression cost function.
-# So lower the constraint (low λ) on the features, the model will resemble linear regression model.
-
-# Lasso cost function is just like Ridge regression cost function, for lambda =0, 
-# The only difference is instead of taking the square of the coefficients, magnitudes are taken into account""")
+# Lasso regression:  the cost function is penalized by the coefficients' magnitude
+# multiplied by λ""")
 
 
 # LINEAR REGRESSION function:
