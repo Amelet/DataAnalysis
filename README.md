@@ -1,6 +1,6 @@
 # DataAnalysis
 
-Code snippets for different data analysis:
+In this repository, I collect scripts that I have used in data analysis. Each .py file organized as a mini project; it contains specific functions and a data set on which functions are tested.
 ## Numerical data
 
 ### _**Central Limit Theorem:**_
