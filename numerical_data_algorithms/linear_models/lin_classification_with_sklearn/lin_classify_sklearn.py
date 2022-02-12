@@ -5,6 +5,8 @@ from sklearn import model_selection, datasets, linear_model, metrics
 # SNIPPETS FOR LINEAR CLASSIFICATION
 # model
 def get_classifier_trained(linclass_type, train_data, test_data):
+    """Creates an object of selected classifier.
+    Then trains classifier"""
     if linclass_type == "ridge":
         classifier_m = linear_model.RidgeClassifier(random_state=1)     # 1. create object
     elif linclass_type == "logistic":
@@ -17,6 +19,8 @@ def get_classifier_trained(linclass_type, train_data, test_data):
 
 # model's metrics
 def get_metrics(classifier_m, test_data, test_labels, data):
+    """Predicts output from the test data set.
+    Measures accuracy of the model with cross-validation (two CV strategies)"""
     predictions = classifier_m.predict(test_data)                          # 3. predict
     accuracy_sc = metrics.accuracy_score(test_labels, predictions)
     scoring_m = model_selection.cross_val_score(classifier_m, data[0], data[1],
@@ -28,6 +32,7 @@ def get_metrics(classifier_m, test_data, test_labels, data):
 
 # USER'S CHOICE: lin_classifier type
 def choose_linclass_type():
+    """Takes input from user"""
     while True:
         linclass_type = input("""
 Which linear classifier model to use?
@@ -70,6 +75,8 @@ cv_strategy.get_n_splits(blobs[1])
 classifier_m, coefficients, intercept = get_classifier_trained(linclass_type, train_data, test_data)
 predictions, accuracy_sc, scoring_m, scoring_with_strategy = get_metrics(classifier_m, test_data, test_labels, blobs)
 
+
+# prints results
 for sc, cv_type in zip([scoring_m, scoring_with_strategy], ["CV=10", "CV with strategy"]):
     print(f'''{linclass_type} classifier, cross-validation strategy {cv_type}, metrics = accuracy:
         mean: {sc.mean()},
