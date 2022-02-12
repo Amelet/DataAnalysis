@@ -32,23 +32,17 @@ def get_models_coefs(train_data, train_labels, linreg_type, regularization_coef)
     2) Fits model.
     3) Returns model's coefficients"""
     if linreg_type == "linreg":
-        linear_regressor = LinearRegression()                       # 1. Linreg object is created
-        linear_regressor.fit(train_data, train_labels)      # 2. Model training
-        coefficients = linear_regressor.coef_                       # 3. Linreg coefficients obtained
-        return coefficients, linear_regressor
+        regressor_m = LinearRegression()                       # 1. Linreg object is created
     elif linreg_type == "lasso":
-        lasso_regressor = Lasso(random_state=3, alpha=regularization_coef)
-        lasso_regressor.fit(train_data, train_labels)
-        coefficients = lasso_regressor.coef_
-        return coefficients, lasso_regressor
+        regressor_m = Lasso(random_state=3, alpha=regularization_coef)
     elif linreg_type == "ridge":
-        ridge_regressor = Ridge(random_state=3, alpha=regularization_coef)
-        ridge_regressor.fit(train_data, train_labels)
-        coefficients = ridge_regressor.coef_
-        return coefficients, ridge_regressor
+        regressor_m = Ridge(random_state=3, alpha=regularization_coef)
     else:
         print("Regression model was not found")
         coefficients = []
+    regressor_m.fit(train_data, train_labels)              # 2. Model training
+    coefficients = regressor_m.coef_                       # 3. Regression coefficients obtained
+    return coefficients, regressor_m
 
 
 def make_predictions(model, test_data, test_labels):
