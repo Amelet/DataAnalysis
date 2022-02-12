@@ -8,6 +8,7 @@ np.set_printoptions(precision=3, suppress=True)
 
 
 def lasso_regression_optimize(X, y, coef_range):
+    """Lasso linear model with iterative fitting along a regularization path"""
     lassocv_regressor = LassoCV(alphas=coef_range, cv=3, random_state=3)
     lassocv_regressor.fit(X, y)
     best_alpha = lassocv_regressor.alpha_

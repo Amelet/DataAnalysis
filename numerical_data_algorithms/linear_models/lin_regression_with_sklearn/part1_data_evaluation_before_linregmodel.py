@@ -20,8 +20,8 @@ def check_correlation_to_y(df):
 
 
 # 3 find collinear columns
-def check_corr_pairwise(df, countinuous_variables):
-    return df.loc[:, countinuous_variables].corr(method='pearson')
+def check_corr_pairwise(df, continuous_variables):
+    return df.loc[:, continuous_variables].corr(method='pearson')
 # if there are collinear columns -> regularization of the model is needed
 
 
