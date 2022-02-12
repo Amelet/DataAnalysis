@@ -37,9 +37,6 @@ def get_models_coefs(train_data, train_labels, linreg_type, regularization_coef)
         regressor_m = Lasso(random_state=3, alpha=regularization_coef)
     elif linreg_type == "ridge":
         regressor_m = Ridge(random_state=3, alpha=regularization_coef)
-    else:
-        print("Regression model was not found")
-        coefficients = []
     regressor_m.fit(train_data, train_labels)              # 2. Model training
     coefficients = regressor_m.coef_                       # 3. Regression coefficients obtained
     return coefficients, regressor_m
