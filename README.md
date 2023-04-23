@@ -2,8 +2,8 @@
 
 Welcome to my Data Analysis repository! Here you can find a collection of mini-projects that I have completed to analyze data using Python. Each project is contained in its own .py file and includes specific functions and a data set on which the functions are tested.
 
-## 📁Numerical data
-
+## 📁Mathematical analysis
+This folder contains four mini-projects for numerical data analysis.
 ### 🔢 _**Central Limit Theorem:**_
 
 This project demonstrates how the Central Limit Theorem can be implemented to estimate the mean of a distribution. As an example, I take the chi-squared distribution and use it to estimate its mean by:
@@ -14,24 +14,15 @@ Estimating the mean of the chi-squared distribution from the Gaussian distributi
 Comparing the estimated mean with the true mean of the chi-squared distribution.
 
 ### 📈 _**Find global min of a function:**_
-This project uses the differential_evolution method to find the global minimum of the function:
-
-    np.sin(x / 5) * np.exp(x / 10) + 5 * np.exp(-x / 2)
-The user specifies the range of x-values in which to search for the minimum.
+This project uses the differential_evolution method to find the global minimum of the function: `np.sin(x / 5) * np.exp(x / 10) + 5 * np.exp(-x / 2)` The user specifies the range of x-values in which to search for the minimum.
 
 
 ### 📈 _**Find min of a function:**_
-This project uses the BFGS method to find the minimum of the function:
-
-    np.sin(x / 5) * np.exp(x / 10) + 5 * np.exp(-x / 2)
-The user specifies the initial approximation of the x-coordinate of the minimum.
+This project uses the BFGS method to find the minimum of the function: `np.sin(x / 5) * np.exp(x / 10) + 5 * np.exp(-x / 2)` The user specifies the initial approximation of the x-coordinate of the minimum.
 
 
 ### 📈 _**LinAlg Solve:**_
-This project fits an n-degree polynomial to the function:
-
-      np.sin(x / 5) * np.exp(x / 10) + 5 * np.exp(-x / 2)
-The user specifies several x-coordinates for the polynomial to pass through.
+This project fits an n-degree polynomial to the function: `np.sin(x / 5) * np.exp(x / 10) + 5 * np.exp(-x / 2)` The user specifies several x-coordinates for the polynomial to pass through.
 
 ## 📁Text data
 ### 📖_**cosine distance between sentences**_
