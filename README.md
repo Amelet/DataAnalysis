@@ -1,17 +1,17 @@
 # DataAnalysis
 
-In this repository, I collect scripts that I have used in data analysis. Each .py file organized as a mini project; it contains specific functions and a data set on which functions are tested.
+Welcome to my Data Analysis repository! Here you can find a collection of mini-projects that I have completed to analyze data using Python. Each project is contained in its own .py file and includes specific functions and a data set on which the functions are tested.
+
 ## Numerical data
 
 ### _**Central Limit Theorem:**_
 
-Shows how CLT can be implemented to estimate a mean of a distribution. As an example of a distribution, I take chi2.
-To estimate its mean:
-1. I draw 1000 of samples from chi2: each sample is a arithmetic mean of N random observations. N is set by the user.
-2. I fit Gaussian distribution to a 1000 of samples distributions;
-3. From Gaussian distribution I estimate the mean of chi2
-4. Compare estimated mean with the mean of chi2.
+This project demonstrates how the Central Limit Theorem can be implemented to estimate the mean of a distribution. As an example, I take the chi-squared distribution and use it to estimate its mean by:
 
+Drawing 1000 samples from the chi-squared distribution, where each sample is an arithmetic mean of N random observations. N is set by the user.
+Fitting a Gaussian distribution to each of the 1000 sample distributions.
+Estimating the mean of the chi-squared distribution from the Gaussian distribution.
+Comparing the estimated mean with the true mean of the chi-squared distribution.
 
 ### _**Find global min of a function:**_
 
