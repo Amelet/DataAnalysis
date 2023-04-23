@@ -1,6 +1,6 @@
 ## 📂Numerical data (algorithms)
 ### 📁Linear models
-#### 🐍Linear Regression: Fitting a Model to Height and Weight Data
+#### 📁Linear Regression: Fitting a Model to Height and Weight Data
 This project demonstrates how to fit a linear model to a dataset of heights and weights (`weights_heights.csv` dataset is used).
 The project uses Python's `NumPy`, `Pandas`, `Seaborn`, and `Matplotlib` libraries to:
 
@@ -15,7 +15,7 @@ The project uses the following functions:
 `train_test_split(data, target)`: Splits arrays or matrices into random train and test subsets.<br>
 The `weights_heights.csv` dataset is used to demonstrate the implementation of these functions.
 
-#### 📁Project: lin_classification_with_sklearn
+#### 📁Linear Classification
 🐍SGDC_with_grid_search.py
 This project showcases how to use grid search to find the optimal parameters for a classifier in Scikit-learn. The Iris dataset is used as an example, with the SGDClassifier as the classifier of choice. The project begins by initializing the classifier and exploring its parameters to find the ones that will be searched for optimal values. A cross-validation object is then created for the grid search. The project then proceeds with the grid search, with the option to perform a random grid search or a regular grid search. The results of the grid search are displayed, including the best estimator, best score, and best parameters.
 
