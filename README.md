@@ -24,6 +24,18 @@ This project uses the BFGS method to find the minimum of the function: `np.sin(x
 ### 📈 _**LinAlg Solve:**_
 This project fits an n-degree polynomial to the function: `np.sin(x / 5) * np.exp(x / 10) + 5 * np.exp(-x / 2)` The user specifies several x-coordinates for the polynomial to pass through.
 
+## 📁Numerical data (algorithms)
+### 📁Cross-validation strategies
+This folder contains code snippets for ways to cross-validate data. The main purpose of this code is to demonstrate how to split arrays or matrices into random train and test subsets, and to show how to perform different types of cross-validation using the scikit-learn library.
+
+The following functions are provided:
+
+`train_test_split(data, target)`: splits the input data and target arrays or matrices into random train and test subsets using the train_test_split function from scikit-learn.<br>
+`get_KFold()`: splits the dataset into k consecutive folds (without shuffling by default) using the KFold function from scikit-learn.<br>
+`get_stratified_KFold(X, target)`: returns stratified folds using the StratifiedKFold function from scikit-learn. The folds are made by preserving the percentage of samples for each class.<br>
+`get_shuffle_split(X)`: splits the input data into random subsets using the ShuffleSplit function from scikit-learn.<br>
+`get_leave_one_out()`: performs leave-one-out cross-validation using the LeaveOneOut function from scikit-learn. Each sample is used once as a test set while the remaining samples form the training set.<br>
+
 ## 📁Text data
 ### 📖_**cosine distance between sentences**_
 This project measures the cosine distance between a collection of sentences in a .txt file and the first sentence in the file. The algorithm outputs the index of the closest sentence and its cosine distance to the first sentence. If words change form, they are not accounted for, and therefore a naive comparison of the sentences is used.
