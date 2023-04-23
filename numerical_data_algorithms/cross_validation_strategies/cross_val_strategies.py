@@ -27,7 +27,7 @@ def get_stratified_KFold(X, target):
     return skf.split(X, target)
 
 
-def get_suffle_split(X):
+def get_shuffle_split(X):
     """Random permutation cross-validator"""
     ss = model_selection.ShuffleSplit(n_splits=10, test_size=0.2)
     return ss.split(X)
