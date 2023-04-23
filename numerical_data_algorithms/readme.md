@@ -1,6 +1,6 @@
 ## 📂Numerical data (algorithms)
 ### 📁Linear models
-#### 📁Linear Regression: Fitting a Model to Height and Weight Data
+#### 📁Least squares method
 This project demonstrates how to fit a linear model to a dataset of heights and weights (`weights_heights.csv` dataset is used).
 The project uses Python's `NumPy`, `Pandas`, `Seaborn`, and `Matplotlib` libraries to:
 
