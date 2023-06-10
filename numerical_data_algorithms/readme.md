@@ -1,6 +1,7 @@
 ## 📂Numerical data (algorithms)
 ### 📁Linear models
 #### 📁Least squares method
+🐍least_squares_method.py
 This project demonstrates how to fit a linear model to a dataset of heights and weights (`weights_heights.csv` dataset is used).
 The project uses Python's `NumPy`, `Pandas`, `Seaborn`, and `Matplotlib` libraries to:
 
@@ -14,6 +15,32 @@ The project uses the following functions:
 `quadratic_error(params, x, y, for_fit)`: Returns the quadratic error between y and y_predicted.<br>
 `train_test_split(data, target)`: Splits arrays or matrices into random train and test subsets.<br>
 The `weights_heights.csv` dataset is used to demonstrate the implementation of these functions.
+
+#### 📁Normal equation
+🐍normal_equation.py
+This Python script demonstrates how to build a simple linear regression model using the normal equation method. It calculates the coefficients for a linear model that predicts the dependent variable from the independent variables in an advertising dataset.
+
+Here are the steps of the script:
+
+1. **Define helper functions**: The script first defines several helper functions:
+
+   - `normal_equation(X, y)`: Computes the coefficients of the linear regression using the normal equation method.
+   - `predict_y(X, w_coefs)`: Predicts the target variable `y` using the design matrix `X` and the coefficients `w_coefs`.
+   - `mserror(y, y_pred)`: Computes the mean square error between the actual target variable `y` and its prediction `y_pred`.
+   - `scale_data(X)`: Scales the data to have zero mean and unit standard deviation.
+   - `prepare_data_matrix(adver_data)`: Prepares the design matrix for the normal equation method.
+
+2. **Load the data**: The script loads the advertising dataset using the Pandas `read_csv` function.
+
+3. **Prepare the data matrix**: It uses the `prepare_data_matrix` function to prepare the design matrix `X` and the target variable vector `y`.
+
+4. **Calculate coefficients**: It uses the `normal_equation` function to calculate the coefficients of the linear regression.
+
+5. **Predict the target variable**: It uses the `predict_y` function to predict the target variable.
+
+6. **Compute and display the mean square error**: It uses the `mserror` function to compute the mean square error between the actual and predicted target variable. It then prints the coefficients of the linear regression model and the mean square error.
+
+The script is specifically designed for the `advertising.csv` dataset, which must be formatted in a specific way for the script to work. The dependent variable must be the last column, and all independent variables must be the preceding columns. All data must be numerical. The script scales all the independent variables before applying the normal equation method. The coefficients for the linear regression are then printed out, alongside the mean squared error of the model predictions.
 
 #### 📁Linear Classification
 🐍SGDC_with_grid_search.py
