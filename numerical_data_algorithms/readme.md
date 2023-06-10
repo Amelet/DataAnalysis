@@ -42,6 +42,54 @@ Here are the steps of the script:
 
 The script is specifically designed for the `advertising.csv` dataset, which must be formatted in a specific way for the script to work. The dependent variable must be the last column, and all independent variables must be the preceding columns. All data must be numerical. The script scales all the independent variables before applying the normal equation method. The coefficients for the linear regression are then printed out, alongside the mean squared error of the model predictions.
 
+#### 📁Linear Regression
+🐍part1_data_evaluation_before_linregmodel.py
+This project provides a set of Python functions designed to help in the initial stages of data analysis, particularly when preparing to fit a linear regression model. The functions cover tasks such as visualizing dependencies, checking correlation, and identifying collinearity and scale differences in a dataset.
+
+Here are the key components of the project:
+
+- `plot_pairwise_dependency(df)`: Visualizes the count of bike rentals as a function of various variables, using pairwise scatter plots. 
+
+- `check_correlation_to_y(df)`: Calculates the Pearson correlation between the output column and each of the other columns in the dataset. This can help to identify which variables may be relevant for a linear regression model.
+
+- `check_corr_pairwise(df, continuous_variables)`: Checks for collinearity between different columns in the dataset. If collinear columns are detected, regularization of the model might be necessary.
+
+- `columns_means(df)`: Checks for scale differences between variables by returning the mean of each column. 
+
+The project is intended to serve as a practical guide to the initial stages of data analysis, with a specific focus on preparing data for linear regression. While the code snippets are provided as functions, they also represent a potential workflow for analyzing a new dataset.
+
+🐍part2_lassoCV_find_regularization_parameter.py
+This project implements Lasso Regression, a type of linear regression that includes a regularization term to avoid overfitting, using sklearn's LassoCV model. The model iteratively fits the data along a regularization path to find the optimal alpha, the regularization parameter.
+
+Key Functions:
+
+- `lasso_regression_optimize(X, y, coef_range)`: Trains a LassoCV model with the given input data `X`, output data `y`, and range of regularization parameters `coef_range`. The function returns the optimal alpha value, the model's coefficients, and the mean squared error (MSE) for each alpha in the regularization path.
+
+- `choose_coef_range()`: Prompts the user to input a range for the regularization coefficient, which will be used to find the optimal alpha value. The user must provide the start, end, and step size for the range.
+
+The project includes a data preparation stage that loads, shuffles, and scales a bike rentals dataset. Then, it prompts the user to specify a range for the regularization coefficient. Using this range, the LassoCV model is trained to find the optimal alpha value. 
+
+Finally, the optimization process is visualized by plotting the MSE against the alpha values. The resulting plot helps to demonstrate the performance of the Lasso Regression model as the regularization parameter changes.
+
+Note: The code has been implemented in a way that informs the user when coefficients for the model were not calculated, ensuring transparency in model performance.
+
+🐍part3_linreg_lasso_ridge_with_sklearn.py
+This project implements and compares three types of linear regression models: Linear Regression, Lasso Regression, and Ridge Regression, using sklearn's library. It demonstrates how regularization techniques, Lasso and Ridge, help handle collinearity and reduce model overfitting.
+
+Key Functions:
+
+- `get_models_coefs(train_data, train_labels, linreg_type, regularization_coef)`: Trains a specified type of linear regression model (Linear, Lasso, Ridge) using given input data `train_data`, output data `train_labels`, and a regularization coefficient `regularization_coef` for Lasso and Ridge regression.
+
+- `make_predictions(model, test_data, test_labels)`: Makes predictions using a trained model `model` and test data `test_data`. Returns the predictions and mean absolute error.
+
+- `scoring_cross_validation(model, data, target)`: Performs cross-validation scoring on a trained model `model` using given data `data` and target `target`, returning the mean and standard deviation of the scores.
+
+- `choose_linreg_type()` and `choose_regularization_coef()`: Prompts user to choose the type of linear regression model and regularization coefficient (for Lasso and Ridge) to use.
+
+The project uses a bike rentals dataset, which is loaded, shuffled, and scaled. The user specifies the type of regression model and (if needed) the regularization coefficient. Then, the model is trained, and predictions are made on the test data. 
+
+Additionally, cross-validation is performed to validate the model. The model's coefficients are printed out, and in case of any issues, the user is informed if coefficients were not calculated. 
+
 #### 📁Linear Classification
 🐍SGDC_with_grid_search.py
 This project showcases how to use grid search to find the optimal parameters for a classifier in Scikit-learn. The Iris dataset is used as an example, with the SGDClassifier as the classifier of choice. The project begins by initializing the classifier and exploring its parameters to find the ones that will be searched for optimal values. A cross-validation object is then created for the grid search. The project then proceeds with the grid search, with the option to perform a random grid search or a regular grid search. The results of the grid search are displayed, including the best estimator, best score, and best parameters.
