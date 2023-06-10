@@ -22,6 +22,24 @@ This project showcases how to use grid search to find the optimal parameters for
 🐍part1_lin_classify_sklearn.py
 This is a Python script for linear classification using the scikit-learn library. The script allows the user to choose between two linear classification models: logistic regression and ridge regression. The script generates a sample dataset using scikit-learn's make_blobs function, and splits it into training and test sets using scikit-learn's train_test_split function. The script then trains the selected linear classifier on the training set and evaluates its performance using accuracy scores obtained through two cross-validation strategies: 10-fold cross-validation and a stratified shuffle split cross-validation. Finally, the script prints the mean, max, min, and standard deviation of the accuracy scores obtained through each cross-validation strategy.
 
+🐍part2_metrics.py
+This Python script is used for evaluating the quality of different classification algorithms by analyzing various performance metrics. Specifically, it utilizes various metrics from Scikit-Learn library to compute the precision, recall, accuracy, F1 score, log loss, and a custom weighted log loss. Then, it visualizes these results.
+
+The script operates in the following steps:
+
+1. **LOAD DATA**: The script loads CSV files, each representing predictions from different classification algorithms. Each line in the CSV file has two columns: the first column for the actual label and the second for the predicted probability.
+
+2. **SET THRESHOLD**: The threshold is initially set at 0.5. This is used to decide whether the predicted probability indicates class 1 or 0. If the predicted probability is greater than the threshold, it is considered as class 1, otherwise class 0.
+
+3. **COMPUTE METRICS**: It computes several metrics (precision, recall, accuracy, f1 score, log loss, and a custom weighted log loss) using the actual and predicted classes. These metrics provide a quantitative measure of the performance of the classification algorithms.
+
+4. **FIND OPTIMAL THRESHOLD**: This section uses the function `find_t` to compute the F1 scores for a range of thresholds (from 0.1 to 1.0). The function also computes the precision-recall curve. 
+
+5. **PLOT RESULTS**: Finally, it visualizes the results with two subplots. The first subplot shows the precision-recall curve as a function of threshold, and the second subplot shows the F1 score as a function of threshold, highlighting the threshold that yields the maximum F1 score. The plots are shown for each algorithm, providing a graphical comparison of their performances.
+
+The script is repeated for several different algorithms ('Ideal', 'Typical', 'Awful', 'Avoids FP', 'Avoids FN'), each with their own set of predicted probabilities. The purpose is to compare these algorithms in terms of the aforementioned metrics and their precision-recall and F1 score curves.
+
+
 ### 📁Data preprocessing strategies
 🐍data_preprocessing.py
 This project focuses on predicting grant approval by a research funding organization using logistic regression.
