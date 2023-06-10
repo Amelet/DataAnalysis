@@ -42,6 +42,22 @@ Here are the steps of the script:
 
 The script is specifically designed for the `advertising.csv` dataset, which must be formatted in a specific way for the script to work. The dependent variable must be the last column, and all independent variables must be the preceding columns. All data must be numerical. The script scales all the independent variables before applying the normal equation method. The coefficients for the linear regression are then printed out, alongside the mean squared error of the model predictions.
 
+#### 📁Stochastic Gradient Descent Linear Regression
+🐍stochastic_gradient_descent.py
+This project provides a Python implementation of the Stochastic Gradient Descent (SGD) algorithm for Linear Regression. It involves data scaling, gradient calculation, error analysis, and visualization. It contains the following functions:
+
+- `predict_y(X, w_coefs)`: This function predicts the output based on input features and weight coefficients.
+- `mserror(y, y_pred)`: Computes the Mean Square Error (MSE) between actual and predicted outputs.
+- `stochastic_gradient_step(X, y, w_coefs, train_ind, eta=0.01)`: Function to compute the SGD step.
+- `stochastic_gradient_descent(X, y, w_init, eta=1e-2, max_iter=1e4, min_weight_dist=1e-8, seed=42, verbose=False)`: Main function that performs SGD over a maximum number of iterations, updates weight coefficients, and computes MSE.
+- `scale_data(X)`: Performs standardization on the input data.
+- `prepare_data_matrix(adver_data)`: Prepares the data matrix, scales the features, and adds a column of ones to handle the bias term in the linear equation.
+
+The project uses the `advertising.csv` dataset for performing linear regression using SGD. It then plots the convergence of the SGD algorithm by visualizing the decrease in MSE with each iteration.
+
+The final output of the project is the optimized weight coefficients for the features, and the minimum MSE achieved.
+
+
 #### 📁Linear Regression
 🐍part1_data_evaluation_before_linregmodel.py
 This project provides a set of Python functions designed to help in the initial stages of data analysis, particularly when preparing to fit a linear regression model. The functions cover tasks such as visualizing dependencies, checking correlation, and identifying collinearity and scale differences in a dataset.
